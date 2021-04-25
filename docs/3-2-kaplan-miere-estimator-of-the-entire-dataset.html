@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="3.2 Kaplan-Miere estimator of the entire dataset | Rotterdam" />
+<meta property="og:type" content="book" />
+
+
+
+
+
+<meta name="author" content="JACK TAN, YIMING MIAO" />
+
+<meta name="date" content="2021-03-14" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="3.2 Kaplan-Miere estimator of the entire dataset | Rotterdam">
+
+<title>3.2 Kaplan-Miere estimator of the entire dataset | Rotterdam</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#motivation"><span class="toc-section-number">1</span> Motivation</a><ul>
+<li><a href="1-1-some-background-information.html#some-background-information"><span class="toc-section-number">1.1</span> Some Background Information</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-data-exploration.html#data-exploration"><span class="toc-section-number">2</span> Data Exploration</a><ul>
+<li><a href="2-1-loading-data.html#loading-data"><span class="toc-section-number">2.1</span> Loading Data</a></li>
+<li class="has-sub"><a href="2-2-data-wrangling.html#data-wrangling"><span class="toc-section-number">2.2</span> Data Wrangling</a><ul>
+<li><a href="2-2-data-wrangling.html#ttumornnodemmetastasis"><span class="toc-section-number">2.2.1</span> T(Tumor)N(Node)M(Metastasis)</a></li>
+<li><a href="2-2-data-wrangling.html#treatment"><span class="toc-section-number">2.2.2</span> Treatment</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-3-data-visualizations-and-exploration.html#data-visualizations-and-exploration"><span class="toc-section-number">2.3</span> Data visualizations and exploration</a><ul>
+<li><a href="2-3-data-visualizations-and-exploration.html#diagnostics-vs.-survival-times"><span class="toc-section-number">2.3.1</span> Diagnostics vs. Survival Times</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#treatment-vs.-survival-times"><span class="toc-section-number">2.3.2</span> Treatment vs. Survival Times</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#age-treatment-vs.-survival-times"><span class="toc-section-number">2.3.3</span> <code>age</code> + <code>Treatment</code> vs. Survival Times</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#treatment-vs.-tnm"><span class="toc-section-number">2.3.4</span> <code>Treatment</code> vs. TNM</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#general-x-year-survival-rate"><span class="toc-section-number">2.3.5</span> General X-year Survival Rate</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="3-survival-analysis.html#survival-analysis"><span class="toc-section-number">3</span> Survival Analysis</a><ul>
+<li><a href="3-1-notation.html#notation"><span class="toc-section-number">3.1</span> Notation</a></li>
+<li><a href="3-2-kaplan-miere-estimator-of-the-entire-dataset.html#kaplan-miere-estimator-of-the-entire-dataset"><span class="toc-section-number">3.2</span> Kaplan-Miere estimator of the entire dataset</a></li>
+<li class="has-sub"><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#kaplan-miere-estimator-on-different-variables-in-rotterdam"><span class="toc-section-number">3.3</span> Kaplan-Miere estimator on different variables in <code>rotterdam</code></a><ul>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#size-vs.-survival-times"><span class="toc-section-number">3.3.1</span> <code>size</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#nodes_level-vs.-survival-times"><span class="toc-section-number">3.3.2</span> <code>Nodes_level</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#grade-vs.-survival-times"><span class="toc-section-number">3.3.3</span> <code>grade</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#treatment-vs.-survival-times-1"><span class="toc-section-number">3.3.4</span> <code>Treatment</code> vs. Survival Times</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-4-parametric-models.html#parametric-models"><span class="toc-section-number">3.4</span> Parametric Models</a><ul>
+<li><a href="3-4-parametric-models.html#user-defined-cox-snell-function"><span class="toc-section-number">3.4.1</span> User-defined Cox-Snell function</a></li>
+<li><a href="3-4-parametric-models.html#exponential-and-weibull"><span class="toc-section-number">3.4.2</span> Exponential and Weibull</a></li>
+<li><a href="3-4-parametric-models.html#log-normal-models"><span class="toc-section-number">3.4.3</span> Log-normal models</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-5-cox-ph-model.html#cox-ph-model"><span class="toc-section-number">3.5</span> Cox-PH model:</a><ul>
+<li><a href="3-5-cox-ph-model.html#cox-ph-model-for-dtime"><span class="toc-section-number">3.5.1</span> Cox-PH model for <code>dtime</code></a></li>
+<li><a href="3-5-cox-ph-model.html#cox-ph-model-for-rtime"><span class="toc-section-number">3.5.2</span> Cox-PH model for <code>rtime</code></a></li>
+</ul></li>
+<li><a href="3-6-summary.html#summary"><span class="toc-section-number">3.6</span> Summary</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-random-survival-forest.html#random-survival-forest"><span class="toc-section-number">4</span> Random Survival Forest</a><ul>
+<li><a href="4-1-dtime.html#dtime"><span class="toc-section-number">4.1</span> <code>dtime</code></a></li>
+<li><a href="4-2-rtime.html#rtime"><span class="toc-section-number">4.2</span> <code>rtime</code></a></li>
+</ul></li>
+<li class="has-sub"><a href="5-conclusion.html#conclusion"><span class="toc-section-number">5</span> Conclusion</a><ul>
+<li><a href="5-1-limitation.html#limitation"><span class="toc-section-number">5.1</span> Limitation</a></li>
+<li><a href="5-2-reference.html#reference"><span class="toc-section-number">5.2</span> Reference</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="kaplan-miere-estimator-of-the-entire-dataset" class="section level2">
+<h2><span class="header-section-number">3.2</span> Kaplan-Miere estimator of the entire dataset</h2>
+<p>Generally speaking, Kaplan-Miere curve is a non-parametric estimator of the survival function which takes censoring into account. Its y-axis measures <span class="math inline">\(P(X \leq k)\)</span> for various values of <span class="math inline">\(k\)</span>.</p>
+<div id="death-time" class="section level4">
+<h4><span class="header-section-number">3.2.0.1</span> Death Time</h4>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">KM_d &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(dtime, death) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> rotterdam)</a>
+<a class="sourceLine" id="cb44-2" title="2"><span class="kw">plot</span>(KM_d, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p>Kaplan-Meier curve also helps us finding the median and mean estimate. For median, we can directly find it from the survfit object <code>KM_d</code>. For mean, we need to calculate the area under the Kaplan-Meier curve.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="co"># median</span></a>
+<a class="sourceLine" id="cb45-2" title="2">KM_d</a></code></pre></div>
+<pre><code>## Call: survfit(formula = Surv(dtime, death) ~ 1, data = rotterdam)
+## 
+##       n  events  median 0.95LCL 0.95UCL 
+##    2982    1272    4033    3888    4309</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="co"># mean</span></a>
+<a class="sourceLine" id="cb47-2" title="2"></a>
+<a class="sourceLine" id="cb47-3" title="3"><span class="co"># AUCKM stands for &quot;Area Under Curve Kaplan Meier&quot;:</span></a>
+<a class="sourceLine" id="cb47-4" title="4">AUCKM =<span class="st"> </span><span class="cf">function</span>(survobj,duration)</a>
+<a class="sourceLine" id="cb47-5" title="5">{</a>
+<a class="sourceLine" id="cb47-6" title="6">base=<span class="kw">c</span>(<span class="dv">0</span>,<span class="kw">summary</span>(survobj)<span class="op">$</span>time,<span class="kw">max</span>(duration))</a>
+<a class="sourceLine" id="cb47-7" title="7">heights=<span class="kw">c</span>(<span class="dv">1</span>,<span class="kw">summary</span>(survobj)<span class="op">$</span>surv)</a>
+<a class="sourceLine" id="cb47-8" title="8">new=<span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb47-9" title="9"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(heights)) { new=<span class="kw">c</span>(new,(base[i<span class="op">+</span><span class="dv">1</span>]<span class="op">-</span>base[i])<span class="op">*</span>heights[i]) }</a>
+<a class="sourceLine" id="cb47-10" title="10"><span class="kw">c</span>(<span class="kw">sum</span>(new))</a>
+<a class="sourceLine" id="cb47-11" title="11">}</a>
+<a class="sourceLine" id="cb47-12" title="12"></a>
+<a class="sourceLine" id="cb47-13" title="13"><span class="kw">AUCKM</span>(KM_d,rotterdam<span class="op">$</span>dtime)</a></code></pre></div>
+<pre><code>## [1] 4099.795</code></pre>
+<p>The overall mean survival time till death for breast cancer is 4099.795 days, and the overall median survival time till death for breast cancer is 4033 days. Both of them are approximately 7 years.</p>
+<p>We can find that the mean and median we calculated above is much longer than the mean and median of the variable <code>dtime</code> itself, because a lot of data point are right-censored:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">mean</span>(rotterdam<span class="op">$</span>dtime)</a></code></pre></div>
+<pre><code>## [1] 2605.34</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">median</span>(rotterdam<span class="op">$</span>dtime)</a></code></pre></div>
+<pre><code>## [1] 2638.5</code></pre>
+</div>
+<div id="recurrence-time" class="section level4">
+<h4><span class="header-section-number">3.2.0.2</span> Recurrence Time</h4>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1">KM_r &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> rotterdam)</a>
+<a class="sourceLine" id="cb53-2" title="2"><span class="kw">plot</span>(KM_r, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p>We can find the mean and median in a similar way:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="co"># median</span></a>
+<a class="sourceLine" id="cb54-2" title="2">KM_r</a></code></pre></div>
+<pre><code>## Call: survfit(formula = Surv(rtime, recur) ~ 1, data = rotterdam)
+## 
+##       n  events  median 0.95LCL 0.95UCL 
+##    2982    1518    2983    2719    3193</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="co"># mean</span></a>
+<a class="sourceLine" id="cb56-2" title="2"></a>
+<a class="sourceLine" id="cb56-3" title="3"><span class="kw">AUCKM</span>(KM_r,rotterdam<span class="op">$</span>rtime)</a></code></pre></div>
+<pre><code>## [1] 3588.535</code></pre>
+<p>The overall mean survival time till recurrence for breast cancer is 3588.535 days, which is approximately 10 years. The overall median survival time till recurrence for breast cancer is 2983 days, which is approximately 8 years. Notice here our mean is much greater than the median, and this indicates that our <code>rtime</code> should be right-skewed.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="kw">ggplot</span>(rotterdam, <span class="kw">aes</span>(<span class="dt">x=</span>rtime)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb58-2" title="2"><span class="st">   </span><span class="kw">geom_density</span>() </a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+</div>
+<div id="survival-time-after-recurrence" class="section level4">
+<h4><span class="header-section-number">3.2.0.3</span> Survival time after recurrence</h4>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">KM_dr &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(drecurtime, death) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> rotterdam_recur)</a>
+<a class="sourceLine" id="cb59-2" title="2"><span class="kw">plot</span>(KM_dr, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="co"># median</span></a>
+<a class="sourceLine" id="cb60-2" title="2">KM_dr</a></code></pre></div>
+<pre><code>## Call: survfit(formula = Surv(drecurtime, death) ~ 1, data = rotterdam_recur)
+## 
+##       n  events  median 0.95LCL 0.95UCL 
+##    1518    1077     894     815     949</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="co"># mean</span></a>
+<a class="sourceLine" id="cb62-2" title="2"></a>
+<a class="sourceLine" id="cb62-3" title="3"><span class="kw">AUCKM</span>(KM_dr,rotterdam_recur<span class="op">$</span>drecurtime)</a></code></pre></div>
+<pre><code>## [1] 1407.135</code></pre>
+<p>The overall mean survival time after rucurrence till death for breast cancer is 1407.135 days, which is approximately a little less than 4 years. The overall median survival time after rucurrence till death for breast cancer is 894 days, which is approximately 2 years and a half. Here, the mean is also greater than the median, also indicating right-skewness:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="kw">ggplot</span>(rotterdam_recur, <span class="kw">aes</span>(<span class="dt">x=</span>drecurtime)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb64-2" title="2"><span class="st">   </span><span class="kw">geom_density</span>() </a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p>Since a Kaplan-Miere estimator is unbiased, we could view the mean and median as being very close to the true value of survival time.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="3-1-notation.html"><button class="btn btn-default">Previous</button></a>
+<a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

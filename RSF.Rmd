@@ -1,0 +1,86 @@
+# Random Survival Forest
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE,include=FALSE}
+library(survival)
+library(survminer)
+library(tidyverse)
+library(caret)
+library(ranger)
+library(randomForestSRC)
+```
+
+Another point of interest might be how could we predict a patients survival based on some of his/ her diagnostics and treatment records. In order to do this, we will fit a random survival forest model to make predictions.
+
+```{r, include = FALSE}
+data(rotterdam)
+```
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE,include=FALSE}
+rotterdam <- rotterdam %>%
+  mutate(Treatment = ifelse(chemo == 1 & hormon == 0, "Chemo", 
+                     ifelse(chemo == 0 & hormon == 1, "Hormon", 
+                     ifelse(chemo == 1 & hormon == 1, "Both", "NaN/Other Treatment")))) %>% 
+  mutate(Treatment = as.factor(Treatment))
+
+rotterdam <- rotterdam %>% 
+  mutate(Nodes_level = ifelse(nodes == 0, "N0", 
+                       ifelse(nodes >= 1 & nodes <= 3, "N1", 
+                       ifelse(nodes >= 4 & nodes <= 9, "N2", 
+                       ifelse(nodes >= 10, "N3", NaN))))) %>% 
+  mutate(Treatment = as.factor(Treatment))
+
+rotterdam <- rotterdam %>%
+  mutate(grade = as.factor(grade)) %>%
+  mutate(size = as.factor(size)) %>%
+  mutate(Treatment = as.factor(Treatment))
+
+rotterdam_recur <- rotterdam %>%
+  filter(recur == 1) %>%
+  mutate(drecurtime = dtime-rtime)
+```
+
+## `dtime`
+
+```{r}
+set.seed(453)
+# Sample the data and create a training subset.
+train <- sample(1:nrow(rotterdam), round(nrow(rotterdam) * 0.80))
+# Train the model.
+rotterdam.grow <- rfsrc(Surv(dtime, death) ~ Treatment + size + nodes + age + grade, rotterdam[train, ], ntree = 100)
+# Test the model.
+rotterdam.pred <- predict(rotterdam.grow, rotterdam[-train , ])
+# Compare the results.
+print(rotterdam.grow)
+print(rotterdam.pred)
+```
+
+As we can see from the RSF result, our test set error rate is 27.43%, which is not very ideal.
+
+```{r}
+plot.rfsrc(rfsrc(Surv(dtime, death) ~ age + Treatment + size + nodes + grade, rotterdam, block.size = 1, importance = TRUE))
+```
+
+As we can see, in our fit of RSF, the most important variable is `nodes` and the second most important variable is `age`. Both variables are quantitative variables.
+
+## `rtime`
+
+```{r}
+set.seed(453)
+# Sample the data and create a training subset.
+train <- sample(1:nrow(rotterdam), round(nrow(rotterdam) * 0.80))
+# Train the model.
+rotterdam.grow <- rfsrc(Surv(rtime, recur) ~ Treatment + size + nodes + age + grade, rotterdam[train, ], ntree = 100)
+# Test the model.
+rotterdam.pred <- predict(rotterdam.grow, rotterdam[-train , ])
+# Compare the results.
+print(rotterdam.grow)
+print(rotterdam.pred)
+```
+
+```{r}
+plot.rfsrc(rfsrc(Surv(rtime, recur) ~ age + Treatment + size + nodes + grade, rotterdam, block.size = 1, importance = TRUE))
+```
+
+Similarly, RSF for predicting `rtime` also have error rate around 30%, and the most important factors are `node`, `size` and `age`. 
+
+Though the prediction from RSF is not that accurate, but its variable importance ranking gives us very similar information to Chapter 3, that the diagnostic values and age are the most significant part that decides patients' lives.

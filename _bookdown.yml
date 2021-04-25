@@ -1,0 +1,6 @@
+book_filename: "Rotterdam"
+language:
+  ui:
+    chapter_name: "Chapter"
+delete_merged_file: True
+rmd_files: ["index.Rmd","02_DataExploration.Rmd","03_Survival.Rmd", "RSF.Rmd", "04_Conclusion.Rmd"]

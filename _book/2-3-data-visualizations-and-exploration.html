@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="2.3 Data visualizations and exploration | Rotterdam" />
+<meta property="og:type" content="book" />
+
+
+
+
+
+<meta name="author" content="JACK TAN, YIMING MIAO" />
+
+<meta name="date" content="2021-03-14" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="2.3 Data visualizations and exploration | Rotterdam">
+
+<title>2.3 Data visualizations and exploration | Rotterdam</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#motivation"><span class="toc-section-number">1</span> Motivation</a><ul>
+<li><a href="1-1-some-background-information.html#some-background-information"><span class="toc-section-number">1.1</span> Some Background Information</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-data-exploration.html#data-exploration"><span class="toc-section-number">2</span> Data Exploration</a><ul>
+<li><a href="2-1-loading-data.html#loading-data"><span class="toc-section-number">2.1</span> Loading Data</a></li>
+<li class="has-sub"><a href="2-2-data-wrangling.html#data-wrangling"><span class="toc-section-number">2.2</span> Data Wrangling</a><ul>
+<li><a href="2-2-data-wrangling.html#ttumornnodemmetastasis"><span class="toc-section-number">2.2.1</span> T(Tumor)N(Node)M(Metastasis)</a></li>
+<li><a href="2-2-data-wrangling.html#treatment"><span class="toc-section-number">2.2.2</span> Treatment</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-3-data-visualizations-and-exploration.html#data-visualizations-and-exploration"><span class="toc-section-number">2.3</span> Data visualizations and exploration</a><ul>
+<li><a href="2-3-data-visualizations-and-exploration.html#diagnostics-vs.-survival-times"><span class="toc-section-number">2.3.1</span> Diagnostics vs. Survival Times</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#treatment-vs.-survival-times"><span class="toc-section-number">2.3.2</span> Treatment vs. Survival Times</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#age-treatment-vs.-survival-times"><span class="toc-section-number">2.3.3</span> <code>age</code> + <code>Treatment</code> vs. Survival Times</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#treatment-vs.-tnm"><span class="toc-section-number">2.3.4</span> <code>Treatment</code> vs. TNM</a></li>
+<li><a href="2-3-data-visualizations-and-exploration.html#general-x-year-survival-rate"><span class="toc-section-number">2.3.5</span> General X-year Survival Rate</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="3-survival-analysis.html#survival-analysis"><span class="toc-section-number">3</span> Survival Analysis</a><ul>
+<li><a href="3-1-notation.html#notation"><span class="toc-section-number">3.1</span> Notation</a></li>
+<li><a href="3-2-kaplan-miere-estimator-of-the-entire-dataset.html#kaplan-miere-estimator-of-the-entire-dataset"><span class="toc-section-number">3.2</span> Kaplan-Miere estimator of the entire dataset</a></li>
+<li class="has-sub"><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#kaplan-miere-estimator-on-different-variables-in-rotterdam"><span class="toc-section-number">3.3</span> Kaplan-Miere estimator on different variables in <code>rotterdam</code></a><ul>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#size-vs.-survival-times"><span class="toc-section-number">3.3.1</span> <code>size</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#nodes_level-vs.-survival-times"><span class="toc-section-number">3.3.2</span> <code>Nodes_level</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#grade-vs.-survival-times"><span class="toc-section-number">3.3.3</span> <code>grade</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#treatment-vs.-survival-times-1"><span class="toc-section-number">3.3.4</span> <code>Treatment</code> vs. Survival Times</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-4-parametric-models.html#parametric-models"><span class="toc-section-number">3.4</span> Parametric Models</a><ul>
+<li><a href="3-4-parametric-models.html#user-defined-cox-snell-function"><span class="toc-section-number">3.4.1</span> User-defined Cox-Snell function</a></li>
+<li><a href="3-4-parametric-models.html#exponential-and-weibull"><span class="toc-section-number">3.4.2</span> Exponential and Weibull</a></li>
+<li><a href="3-4-parametric-models.html#log-normal-models"><span class="toc-section-number">3.4.3</span> Log-normal models</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-5-cox-ph-model.html#cox-ph-model"><span class="toc-section-number">3.5</span> Cox-PH model:</a><ul>
+<li><a href="3-5-cox-ph-model.html#cox-ph-model-for-dtime"><span class="toc-section-number">3.5.1</span> Cox-PH model for <code>dtime</code></a></li>
+<li><a href="3-5-cox-ph-model.html#cox-ph-model-for-rtime"><span class="toc-section-number">3.5.2</span> Cox-PH model for <code>rtime</code></a></li>
+</ul></li>
+<li><a href="3-6-summary.html#summary"><span class="toc-section-number">3.6</span> Summary</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-random-survival-forest.html#random-survival-forest"><span class="toc-section-number">4</span> Random Survival Forest</a><ul>
+<li><a href="4-1-dtime.html#dtime"><span class="toc-section-number">4.1</span> <code>dtime</code></a></li>
+<li><a href="4-2-rtime.html#rtime"><span class="toc-section-number">4.2</span> <code>rtime</code></a></li>
+</ul></li>
+<li class="has-sub"><a href="5-conclusion.html#conclusion"><span class="toc-section-number">5</span> Conclusion</a><ul>
+<li><a href="5-1-limitation.html#limitation"><span class="toc-section-number">5.1</span> Limitation</a></li>
+<li><a href="5-2-reference.html#reference"><span class="toc-section-number">5.2</span> Reference</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="data-visualizations-and-exploration" class="section level2">
+<h2><span class="header-section-number">2.3</span> Data visualizations and exploration</h2>
+<div id="diagnostics-vs.-survival-times" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Diagnostics vs. Survival Times</h3>
+<p>It is commonly considered that the earlier the breast cancer is detected and the earlier it is treated, the longer survival a patient might enjoy. Thus we think it is important to first look at the diagnostics before treatment and visualize their relationship with survival times.</p>
+<p><code>size</code> vs. <code>dtime</code></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> size, <span class="dt">y =</span> dtime, <span class="dt">fill =</span> size)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><code>size</code> vs. <code>rtime</code></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> size, <span class="dt">y =</span> rtime, <span class="dt">fill =</span> size)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><code>size</code> vs. <code>drecurtime</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam_recur, <span class="kw">aes</span>(<span class="dt">x =</span> size, <span class="dt">y =</span> drecurtime, <span class="dt">fill =</span> size)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>As we can see from the three plots above, tumor size could be an important factor that affects patients’ survival time and recur time. For <code>size</code> smaller than 20, most of the patients are able to survive or encounter recurrence after roughly 3000 days. But for <code>size</code> 20-50 and &gt;50, it’s highly likely for cancer cells to recur in 500 days. However, after cancer cells have recurred, most patients could not survive over 2 years.</p>
+<p><code>Nodes_level</code> vs. <code>dtime</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Nodes_level, <span class="dt">y =</span> dtime, <span class="dt">fill =</span> Nodes_level)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><code>Nodes_level</code> vs. <code>rtime</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Nodes_level, <span class="dt">y =</span> rtime, <span class="dt">fill =</span> Nodes_level)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><code>Nodes_level</code> vs. <code>drecurtime</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam_recur, <span class="kw">aes</span>(<span class="dt">x =</span> Nodes_level, <span class="dt">y =</span> drecurtime, <span class="dt">fill =</span> Nodes_level)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Similarly, <code>nodes</code> is also a factor impacting the life of breast cancer patients. In fact, for patients with high <code>Nodes_level</code>, it is typically considered they are either having metastasis of the cancer or already experiencing a regional recurrence of the cancer. Thus, we could see that most patients with N2 or N3 <code>Nodes_level</code> experience recurrence shortly after treatment. However, after tumor has recurred, most patients could not survive over 2 years.</p>
+<p><code>grade</code> vs. <code>dtime</code></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> grade, <span class="dt">y =</span> dtime, <span class="dt">fill =</span> grade)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><code>grade</code> vs. <code>rtime</code></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> grade, <span class="dt">y =</span> rtime, <span class="dt">fill =</span> grade)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><code>grade</code> vs. <code>drecurtime</code></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam_recur, <span class="kw">aes</span>(<span class="dt">x =</span> grade, <span class="dt">y =</span> drecurtime, <span class="dt">fill =</span> grade)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>We noticed that a larger proportion of patients in grade 3 survived &lt;2000 days than those in grade 2, and pretty much of patients in grade 3 suffer from recurrence of breast cancer in less than 1000 days.</p>
+</div>
+<div id="treatment-vs.-survival-times" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Treatment vs. Survival Times</h3>
+<p>Next we are also going to look at the effect of different types of treatments on the survival times of breast cancer patients.</p>
+<p><code>Treatment</code> vs. <code>dtime</code></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> dtime, <span class="dt">fill =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><code>Treatment</code> vs. <code>rtime</code></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> rtime, <span class="dt">fill =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><code>Treatment</code> vs. <code>drecurtime</code></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam_recur, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> drecurtime, <span class="dt">fill =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>By examing the three plots above, it seems that <code>Treatment</code> would not affect patients’ survival time or recurrence that much. We can find that <code>chemo + hormon</code> is likely to be the one with best curative effect, that patients receiving both chemo and hormon therapy tend to have longer survival time and longer time to recurrence. And the effect of hormon therapy itself seems not that satisfying. However, after tumor have recurred, most patients do not live up to 2 years.</p>
+<p>We also found a bi-model shape in <code>NaN/Other Traetment</code> group in <code>rtime</code> vs. <code>Treatment</code>. This may because the two peaks correponds to no treatment and other treatment separately, but currently we don’t have more information investigating the true reason.</p>
+</div>
+<div id="age-treatment-vs.-survival-times" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> <code>age</code> + <code>Treatment</code> vs. Survival Times</h3>
+<p><code>age</code> + <code>Treatment</code> vs. <code>dtime</code></p>
+<p>As we were visualizing for <code>Treatment</code> vs. <code>dtime</code>, we found that Hormontherapy generally has a weaker effect than Chemotherapy, but we think there might be some confounding variables that leads to such conclusion. One that we discovered is <code>age</code>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> dtime, <span class="dt">color =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><code>age</code> + <code>Treatment</code> vs. <code>rtime</code></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> rtime, <span class="dt">color =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>It might be difficult to see from the plots right now, so we decided to make a partial plot of the full plot by filtering the patients who did not take either treatment out.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">rotterdam_new &lt;-rotterdam <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Treatment <span class="op">!=</span><span class="st"> &quot;NaN/Other Treatment&quot;</span>) </a></code></pre></div>
+<p><code>age</code> + <code>Treatment</code> vs. <code>dtime</code></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam_new, <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> dtime, <span class="dt">color =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><code>age</code> + <code>Treatment</code> vs. <code>rtime</code></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam_new, <span class="kw">aes</span>(<span class="dt">x =</span> age, <span class="dt">y =</span> rtime, <span class="dt">color =</span> Treatment)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>From the two plots above we could see that the patients who took either chemo therapy or hormon therapy are clearly clusterd. For the group who only took chemotherapy, most patients’ <code>age</code> are located below 50 years old. For the group who only took hormontherapy, most patients’ age are located above 50 years old. This is because chemotherapy might have more negative effects for patients at larger age than hormontherapy and thus would effect survival if the wrong therapy is given. Generally, hormontherapy is more friendly to elder people but chemotherapy has better effect.</p>
+</div>
+<div id="treatment-vs.-tnm" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> <code>Treatment</code> vs. TNM</h3>
+<p><code>Treatment</code> vs. <code>size</code></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">fill =</span> size)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>We are also interested to see if there are any other factors that would affect a patient’s decision on the treatment he/she takes other than his/her age. We thought we could stick with the TNM system and we started with tumor size. Generally, there is no obvious distinction in the treatment taken among different sizes of tumor as we can see from the plot above.</p>
+<p><code>Treatment</code> vs. <code>Nodes_level</code></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">fill =</span> Nodes_level)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>This time we are checking if there are difference in <code>Treatment</code> with respect to different positive lymph node levels. Now we are onto something interesting. We can see that none of the <code>N0</code> patients in our dataset have taken either chemotherapy or hormontherapy. we think that it is possible that chemotherapy and hormontherapy are for severer patients and they might just be “overkill” for mild patients.</p>
+<p><code>Treatment</code> vs. <code>grade</code></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> rotterdam, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">fill =</span> grade)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</a></code></pre></div>
+<p><img src="Rotterdam_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>From the above we can see that for grade 2 and grade 3 breast cancer, there’s not too much difference in the treatment a patient takes.</p>
+</div>
+<div id="general-x-year-survival-rate" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> General X-year Survival Rate</h3>
+<p>A very important criterion in analysis about cancer is the 5-year survival rate. In order to examine that, we introduce a new variable called <code>5_year_survival</code>, which indicates 1 if a patients survival time is larger than 5 years and 0 vice versa.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">rotterdam &lt;-<span class="st"> </span>rotterdam <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dtime_Years =</span> <span class="kw">floor</span>(dtime<span class="op">/</span><span class="dv">365</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb32-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="st">`</span><span class="dt">5_year_survival</span><span class="st">`</span> =<span class="st"> </span><span class="kw">ifelse</span>(dtime_Years <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">0</span>))</a></code></pre></div>
+<p>Now we want to calculate the 5-year survival rate for the population in the dataset.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">rotterdam <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(<span class="st">`</span><span class="dt">5_year_survival</span><span class="st">`</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb33-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">number =</span> <span class="kw">n</span>(), <span class="dt">.groups =</span> <span class="st">&#39;drop&#39;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   `5_year_survival` number
+##               &lt;dbl&gt;  &lt;int&gt;
+## 1                 0    898
+## 2                 1   2084</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="dv">2084</span><span class="op">/</span>(<span class="dv">898</span><span class="op">+</span><span class="dv">2084</span>)</a></code></pre></div>
+<pre><code>## [1] 0.6988598</code></pre>
+<p>And also the important 10-year survival rate.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">rotterdam &lt;-<span class="st"> </span>rotterdam <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dtime_Years =</span> <span class="kw">floor</span>(dtime<span class="op">/</span><span class="dv">365</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="st">`</span><span class="dt">10_year_survival</span><span class="st">`</span> =<span class="st"> </span><span class="kw">ifelse</span>(dtime_Years <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">0</span>))</a></code></pre></div>
+<p>Now we calculate the 10-year survival rate for the population in the dataset.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1">rotterdam <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(<span class="st">`</span><span class="dt">10_year_survival</span><span class="st">`</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb38-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">number =</span> <span class="kw">n</span>(), <span class="dt">.groups =</span> <span class="st">&#39;drop&#39;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   `10_year_survival` number
+##                &lt;dbl&gt;  &lt;int&gt;
+## 1                  0   2297
+## 2                  1    685</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1"><span class="dv">685</span><span class="op">/</span>(<span class="dv">685</span> <span class="op">+</span><span class="st"> </span><span class="dv">2297</span>)</a></code></pre></div>
+<pre><code>## [1] 0.2297116</code></pre>
+<p>We can find that the 5-year survival rate for breast cancer is just fine, and around 70% of patients are able to live more than 5 years. However, the 10-year survival rate is still disappointing given the current medical level, and only around 20% patients could live more than 10 years after diagnosis.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">rotterdam <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(grade) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">number =</span> <span class="kw">n</span>(), <span class="dt">.groups =</span> <span class="st">&#39;drop&#39;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   grade number
+##   &lt;fct&gt;  &lt;int&gt;
+## 1 2        794
+## 2 3       2188</code></pre>
+<p>However, we have to notice that in our dataset, most patients are diagnosed with grade III breast cancer, which is pretty severe. This would give a more pessimistic calculation of 5-year/ 10-year survival rates of breast cancer patients as a whole. In fact, according to webMD.com, the overall 5-year relative survival rate for breast cancer is 90% and the 10-year breast cancer relative survival rate is 84%.</p>
+<p>Thus the important point is that female with high risk of breast caner(family inheritance, bad life habits, etc.) should have regular physical examination, with proper screening for breast cancer. Even if diagnosed, do not panic and take treatment as soon as possible. In this way, a breast cancer patients might be able to enjoy longer survival.</p>
+<p>Another important yet sad point is that after cancer has recurred, it does not matter what treatment a patient takes and most people do not live up to 2 years if recurred. Thus patients should be extremely careful not getting cancer recurred.</p>
+
+</div>
+</div>
+<!-- </div> -->
+<p style="text-align: center;">
+<a href="2-2-data-wrangling.html"><button class="btn btn-default">Previous</button></a>
+<a href="3-survival-analysis.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+title: "Rotterdam"
+author: "JACK TAN, YIMING MIAO"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::pdf_book: default
+  bookdown::gitbook: default
+documentclass: book
+classoption: openany
+---
+
+# Motivation
+
+According to World Health Organization$*$, Cancer is a leading cause of death worldwide, accounting for an estimated 9.6 million deaths in 2018. And amongst all cancer types, breast cancer(along with lung cancer) has the top cases of death: 2.09 million cases in 2018. According to the CDC$*$, Breast cancer is also the second most common cancer among women in the United States, comprising 22.9% of invasive cancers in women and 16% of all female cancers. However, because of the cancer's characteristics, breast cancer patients have relatively high 5-year survival rate of 85% compared to other more lethal cancers according to research conducted in the UK$*$. We think it is worthwhile to look at the relationship between survival/recurrence time and some diagnostic criterion of breast cancer. We are also going to explore the effect of different treatments on survival/recurrence.
+
+## Some Background Information
+
+For doctors to be able to assess the severity and different types of breast cancer, researchers have come up with a diagnosing system called the TNM$*$ Staging system that is widely used in the diagnostics of breast cancer:
+
+**Tumor(T)**: How large is the primary tumor in the breast? 
+
+**Node (N)**: Has the tumor spread to the lymph nodes? If so, where, what size, and how many?
+
+**Metastasis (M)**: Has the cancer spread to other parts of the body?
+
+Generally, the results from the above three features are combined to form a diagnosis of a total of 5 stages of breast cancer: stage 0 (zero), which is non-invasive ductal carcinoma in situ (DCIS), and stages I through IV (1 through 4), which are used for invasive breast cancer.
+
+In addition, cancer cells are given a grade when they are removed from the breast and checked in the lab. Based on how much they look like normal cells, there are three grades of cancer cells:
+
+**Grade 1 / well differentiated**: The cells are slower-growing, and look more like normal breast tissue, meaning that cancer is less likely to spread.
+
+**Grade 2 / moderately differentiated**. The cells are growing at a speed of and look like cells somewhere between grades 1 and 3.
+
+**Grade 3 / poorly differentiated**: The cells look very different from normal cells, meaning a faster-growing cancer that’s more likely to spread.
+
+We will use data related to information above to conduct our exploration.
+
+
+
