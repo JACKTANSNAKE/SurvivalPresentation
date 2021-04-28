@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="4.1 Limitation | Rotterdam" />
+<meta property="og:title" content="4.1 Limitation | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
 <meta property="og:type" content="book" />
 
 
@@ -14,7 +14,7 @@
 
 <meta name="author" content="JACK TAN, YIMING MIAO" />
 
-<meta name="date" content="2021-03-12" />
+<meta name="date" content="2021-04-26" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 
-<meta name="description" content="4.1 Limitation | Rotterdam">
+<meta name="description" content="4.1 Limitation | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset">
 
-<title>4.1 Limitation | Rotterdam</title>
+<title>4.1 Limitation | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,6 +116,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+
 <link rel="stylesheet" href="toc.css" type="text/css" />
 
 <style type = "text/css">
@@ -131,6 +132,12 @@ code {
 img {
   max-width:100%;
   height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -161,24 +168,25 @@ img {
 <li><a href="2-3-data-visualizations-and-exploration.html#general-x-year-survival-rate"><span class="toc-section-number">2.3.5</span> General X-year Survival Rate</a></li>
 </ul></li>
 </ul></li>
-<li class="has-sub"><a href="3-survival.html#survival"><span class="toc-section-number">3</span> Survival</a><ul>
-<li><a href="3-1-loading-data-1.html#loading-data-1"><span class="toc-section-number">3.1</span> Loading Data</a></li>
+<li class="has-sub"><a href="3-survival-analysis.html#survival-analysis"><span class="toc-section-number">3</span> Survival Analysis</a><ul>
+<li><a href="3-1-notation.html#notation"><span class="toc-section-number">3.1</span> Notation</a></li>
 <li><a href="3-2-kaplan-miere-estimator-of-the-entire-dataset.html#kaplan-miere-estimator-of-the-entire-dataset"><span class="toc-section-number">3.2</span> Kaplan-Miere estimator of the entire dataset</a></li>
 <li class="has-sub"><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#kaplan-miere-estimator-on-different-variables-in-rotterdam"><span class="toc-section-number">3.3</span> Kaplan-Miere estimator on different variables in <code>rotterdam</code></a><ul>
 <li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#size-vs.-survival-times"><span class="toc-section-number">3.3.1</span> <code>size</code> vs. Survival Times</a></li>
 <li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#nodes_level-vs.-survival-times"><span class="toc-section-number">3.3.2</span> <code>Nodes_level</code> vs. Survival Times</a></li>
-<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#treatment-vs.-survival-times-1"><span class="toc-section-number">3.3.3</span> <code>Treatment</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#grade-vs.-survival-times"><span class="toc-section-number">3.3.3</span> <code>grade</code> vs. Survival Times</a></li>
+<li><a href="3-3-kaplan-miere-estimator-on-different-variables-in-rotterdam.html#treatment-vs.-survival-times-1"><span class="toc-section-number">3.3.4</span> <code>Treatment</code> vs. Survival Times</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-4-parametric-models.html#parametric-models"><span class="toc-section-number">3.4</span> Parametric Models</a><ul>
 <li><a href="3-4-parametric-models.html#user-defined-cox-snell-function"><span class="toc-section-number">3.4.1</span> User-defined Cox-Snell function</a></li>
-<li><a href="3-4-parametric-models.html#exponential-models"><span class="toc-section-number">3.4.2</span> Exponential models</a></li>
-<li><a href="3-4-parametric-models.html#weibull-models"><span class="toc-section-number">3.4.3</span> Weibull models</a></li>
-<li><a href="3-4-parametric-models.html#log-normal-models"><span class="toc-section-number">3.4.4</span> Log-normal models</a></li>
-<li><a href="3-4-parametric-models.html#positive-coefficient-of-age"><span class="toc-section-number">3.4.5</span> Positive coefficient of <code>age</code></a></li>
+<li><a href="3-4-parametric-models.html#exponential-and-weibull"><span class="toc-section-number">3.4.2</span> Exponential and Weibull</a></li>
+<li><a href="3-4-parametric-models.html#log-normal-models"><span class="toc-section-number">3.4.3</span> Log-normal models</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-5-cox-ph-model.html#cox-ph-model"><span class="toc-section-number">3.5</span> Cox-PH model:</a><ul>
-<li><a href="3-5-cox-ph-model.html#dtime-coxph-model"><span class="toc-section-number">3.5.1</span> <code>dtime</code> coxph model</a></li>
+<li><a href="3-5-cox-ph-model.html#cox-ph-model-for-dtime"><span class="toc-section-number">3.5.1</span> Cox-PH model for <code>dtime</code></a></li>
+<li><a href="3-5-cox-ph-model.html#cox-ph-model-for-rtime"><span class="toc-section-number">3.5.2</span> Cox-PH model for <code>rtime</code></a></li>
 </ul></li>
+<li><a href="3-6-summary.html#summary"><span class="toc-section-number">3.6</span> Summary</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-conclusion.html#conclusion"><span class="toc-section-number">4</span> Conclusion</a><ul>
 <li><a href="4-1-limitation.html#limitation"><span class="toc-section-number">4.1</span> Limitation</a></li>
@@ -193,7 +201,7 @@ img {
 <div id="limitation" class="section level2">
 <h2><span class="header-section-number">4.1</span> Limitation</h2>
 <ul>
-<li><p>As we have mentioned in Motivation, the TNM system for diagnosis of breast cancer relies on three important indicators, <strong>Tumor</strong>, <strong>Node</strong>, <strong>Metastasis</strong>. Now in our research, the dataset already contains information about tumor size and number of lymph nodes tested positive, but it does not contain any information about metastasis. However, as we have mentioned in Chapter 2, these information would not exist until a patient has developed a stage IV breast cancer. We don’t know exactly if these patients were left out for a reason, but we still think that a more generalized subject pool would make the result of the research more convincing and more generalized. For future studies, we think that not only stage IV breast cancer patients but also stage I patients should all be recorded as part of the dataset.</p></li>
+<li><p>As we have mentioned in Motivation, the TNM system for diagnosis of breast cancer relies on three important indicators, <strong>Tumor</strong>, <strong>Node</strong>, <strong>Metastasis</strong>. Now in our research, the dataset already contains information about tumor size, number of lymph nodes tested positive and somewhat incomplete metastasis, as we do not have information on patients with grade I cancer. This might lead to an overall pessimistic conclusion about survival times of breast cancer patients. For future studies, we think that it would be important to include grade I breast cancer incidence, as it is crucial to a more accurate estimate of patients’ survival time.</p></li>
 <li><p>In Chapter 2, we compared the effect and the condition for choosing between chemotherapy and hormontherapy. We have had good results discerning the patients taking different therapy by age, as younger patients tend to take chemotherapy more and older patients tend to take hormontherapy more. And we have also seen that most patients with no lymph nodes tested positive choose neither of chemotherapy and hormontherapy. There might be other therapies that better suit mild condition patients. Additionally, nowadays, there are way more categories of therapies for breast cancer and many of them may have better effect on patients and less discerning characteristics like age with chemotherapy and hormontherapy. In future studies, these missing treatment shall be recorded, as it is critical to studying if the new methods are more effective and lasting treatment for breast cancer patients.</p></li>
 <li><p>In Chapter 3, we found out that in parametric models for recurrence vs. predictors, the coefficient for age is positive, which suggests that the older one patient is, the less likely he/she have recurred cancer. This counter-intuitive fact was explained by introducing the concept of competing risks. However, in the data that we obtained, there is no record of each patients’ cause of death, and thus we could not conduct further analysis on what would be possible competing event that makes this relationship exist. In future study, if possible, researcher should try to record for patients with exact time of death their cause of death. In this manner, we might be able to study the causes of death for patients with breast cancer but did not die from the cancer itself.</p></li>
 </ul>

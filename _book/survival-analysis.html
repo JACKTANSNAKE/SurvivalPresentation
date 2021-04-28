@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter3 Survival Analysis | Rotterdam</title>
-  <meta name="description" content="Chapter3 Survival Analysis | Rotterdam" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>Chapter3 Survival Analysis | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</title>
+  <meta name="description" content="Chapter3 Survival Analysis | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter3 Survival Analysis | Rotterdam" />
+  <meta property="og:title" content="Chapter3 Survival Analysis | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter3 Survival Analysis | Rotterdam" />
+  <meta name="twitter:title" content="Chapter3 Survival Analysis | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="JACK TAN, YIMING MIAO" />
 
 
-<meta name="date" content="2021-03-14" />
+<meta name="date" content="2021-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="data-exploration.html"/>
-<link rel="next" href="random-survival-forest.html"/>
+<link rel="next" href="conclusion.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -115,6 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -164,13 +167,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="survival-analysis.html"><a href="survival-analysis.html#summary"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="random-survival-forest.html"><a href="random-survival-forest.html"><i class="fa fa-check"></i><b>4</b> Random Survival Forest</a><ul>
-<li class="chapter" data-level="4.1" data-path="random-survival-forest.html"><a href="random-survival-forest.html#dtime"><i class="fa fa-check"></i><b>4.1</b> <code>dtime</code></a></li>
-<li class="chapter" data-level="4.2" data-path="random-survival-forest.html"><a href="random-survival-forest.html#rtime"><i class="fa fa-check"></i><b>4.2</b> <code>rtime</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a><ul>
-<li class="chapter" data-level="5.1" data-path="conclusion.html"><a href="conclusion.html#limitation"><i class="fa fa-check"></i><b>5.1</b> Limitation</a></li>
-<li class="chapter" data-level="5.2" data-path="conclusion.html"><a href="conclusion.html#reference"><i class="fa fa-check"></i><b>5.2</b> Reference</a></li>
+<li class="chapter" data-level="4" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>4</b> Conclusion</a><ul>
+<li class="chapter" data-level="4.1" data-path="conclusion.html"><a href="conclusion.html#limitation"><i class="fa fa-check"></i><b>4.1</b> Limitation</a></li>
+<li class="chapter" data-level="4.2" data-path="conclusion.html"><a href="conclusion.html#reference"><i class="fa fa-check"></i><b>4.2</b> Reference</a></li>
 </ul></li>
 </ul>
 
@@ -181,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Rotterdam</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</a>
           </h1>
         </div>
 
@@ -204,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">3.2.0.1</span> Death Time</h4>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">KM_d &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(dtime, death) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> rotterdam)</a>
 <a class="sourceLine" id="cb44-2" title="2"><span class="kw">plot</span>(KM_d, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <p>Kaplan-Meier curve also helps us finding the median and mean estimate. For median, we can directly find it from the survfit object <code>KM_d</code>. For mean, we need to calculate the area under the Kaplan-Meier curve.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="co"># median</span></a>
 <a class="sourceLine" id="cb45-2" title="2">KM_d</a></code></pre></div>
@@ -237,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">3.2.0.2</span> Recurrence Time</h4>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1">KM_r &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> rotterdam)</a>
 <a class="sourceLine" id="cb53-2" title="2"><span class="kw">plot</span>(KM_r, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p>We can find the mean and median in a similar way:</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="co"># median</span></a>
 <a class="sourceLine" id="cb54-2" title="2">KM_r</a></code></pre></div>
@@ -252,13 +251,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The overall mean survival time till recurrence for breast cancer is 3588.535 days, which is approximately 10 years. The overall median survival time till recurrence for breast cancer is 2983 days, which is approximately 8 years. Notice here our mean is much greater than the median, and this indicates that our <code>rtime</code> should be right-skewed.</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="kw">ggplot</span>(rotterdam, <span class="kw">aes</span>(<span class="dt">x=</span>rtime)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb58-2" title="2"><span class="st">   </span><span class="kw">geom_density</span>() </a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 </div>
 <div id="survival-time-after-recurrence" class="section level4">
 <h4><span class="header-section-number">3.2.0.3</span> Survival time after recurrence</h4>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">KM_dr &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(drecurtime, death) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data =</span> rotterdam_recur)</a>
 <a class="sourceLine" id="cb59-2" title="2"><span class="kw">plot</span>(KM_dr, <span class="dt">conf.int =</span> <span class="ot">TRUE</span>, <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="co"># median</span></a>
 <a class="sourceLine" id="cb60-2" title="2">KM_dr</a></code></pre></div>
 <pre><code>## Call: survfit(formula = Surv(drecurtime, death) ~ 1, data = rotterdam_recur)
@@ -272,7 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The overall mean survival time after rucurrence till death for breast cancer is 1407.135 days, which is approximately a little less than 4 years. The overall median survival time after rucurrence till death for breast cancer is 894 days, which is approximately 2 years and a half. Here, the mean is also greater than the median, also indicating right-skewness:</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="kw">ggplot</span>(rotterdam_recur, <span class="kw">aes</span>(<span class="dt">x=</span>drecurtime)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb64-2" title="2"><span class="st">   </span><span class="kw">geom_density</span>() </a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <p>Since a Kaplan-Miere estimator is unbiased, we could view the mean and median as being very close to the true value of survival time.</p>
 </div>
 </div>
@@ -287,21 +286,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb65-3" title="3"><span class="kw">legend</span>(<span class="dv">6000</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;&lt;=20&quot;</span>, <span class="st">&quot;20-50&quot;</span>, <span class="st">&quot;&gt;50&quot;</span>),</a>
 <a class="sourceLine" id="cb65-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb65-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Tumor Size&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p><code>size</code> vs. <code>rtime</code></p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1">KM_None_Recur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span>size, <span class="dt">data =</span> rotterdam)</a>
 <a class="sourceLine" id="cb66-2" title="2"><span class="kw">plot</span>(KM_None_Recur, <span class="dt">conf.type =</span> <span class="st">&quot;plain&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a>
 <a class="sourceLine" id="cb66-3" title="3"><span class="kw">legend</span>(<span class="dv">6000</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;&lt;=20&quot;</span>, <span class="st">&quot;20-50&quot;</span>, <span class="st">&quot;&gt;50&quot;</span>),</a>
 <a class="sourceLine" id="cb66-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb66-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Tumor Size&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>In general, patients with smaller tumor at diagnosis enjoys longer survival for both death and recurrence.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">KM_None_drecur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(drecurtime, death) <span class="op">~</span><span class="st"> </span>size, <span class="dt">data =</span> rotterdam_recur)</a>
 <a class="sourceLine" id="cb67-2" title="2"><span class="kw">plot</span>(KM_None_drecur, <span class="dt">conf.type =</span> <span class="st">&quot;plain&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a>
 <a class="sourceLine" id="cb67-3" title="3"><span class="kw">legend</span>(<span class="dv">4500</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;&lt;=20&quot;</span>, <span class="st">&quot;20-50&quot;</span>, <span class="st">&quot;&gt;50&quot;</span>),</a>
 <a class="sourceLine" id="cb67-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb67-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Tumor Size&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <p>The trend is still the same as patients with smaller tumor size enjoy longer survival of death after recurrence, but the survival time now decreases much faster for all groups.</p>
 </div>
 <div id="nodes_level-vs.-survival-times" class="section level3">
@@ -312,14 +311,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb68-3" title="3"><span class="kw">legend</span>(<span class="dv">6000</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;N0&quot;</span>, <span class="st">&quot;N1&quot;</span>,<span class="st">&quot;N2&quot;</span>, <span class="st">&quot;N3&quot;</span>),</a>
 <a class="sourceLine" id="cb68-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb68-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Nodes_level&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p><code>Nodes_level</code> vs. <code>rtime</code></p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1">KM_None_Recur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span>Nodes_level, <span class="dt">data =</span> rotterdam)</a>
 <a class="sourceLine" id="cb69-2" title="2"><span class="kw">plot</span>(KM_None_Recur, <span class="dt">conf.type =</span> <span class="st">&quot;plain&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;orange&quot;</span>), <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a>
 <a class="sourceLine" id="cb69-3" title="3"><span class="kw">legend</span>(<span class="dv">6000</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;N0&quot;</span>, <span class="st">&quot;N1&quot;</span>,<span class="st">&quot;N2&quot;</span>, <span class="st">&quot;N3&quot;</span>),</a>
 <a class="sourceLine" id="cb69-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb69-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Nodes_level&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <p>In general, patients with less nodes tested positive will enjoy longer survival for both death and recurrence.</p>
 <p><code>Nodes_level</code> vs. <code>drecurtime</code></p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">KM_None_drecur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(drecurtime, death) <span class="op">~</span><span class="st"> </span>Nodes_level, <span class="dt">data =</span> rotterdam_recur)</a>
@@ -327,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb70-3" title="3"><span class="kw">legend</span>(<span class="dv">4500</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;N0&quot;</span>, <span class="st">&quot;N1&quot;</span>,<span class="st">&quot;N2&quot;</span>, <span class="st">&quot;N3&quot;</span>),</a>
 <a class="sourceLine" id="cb70-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb70-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Nodes_level&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p>Similarly, the trend is still the same as patients with fewer nodes tested positive enjoy longer survival of death after recurrence, but the survival time now decreases much faster for all groups, and the difference is small in groups <code>N1</code>, <code>N2</code> and <code>N3</code>.</p>
 </div>
 <div id="grade-vs.-survival-times" class="section level3">
@@ -338,21 +337,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb71-3" title="3"><span class="kw">legend</span>(<span class="dv">6000</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>),</a>
 <a class="sourceLine" id="cb71-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb71-5" title="5">       <span class="dt">title=</span><span class="st">&quot;grade&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 <p><code>grade</code> vs. <code>rtime</code></p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1">KM_None_Recur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span>grade, <span class="dt">data =</span> rotterdam)</a>
 <a class="sourceLine" id="cb72-2" title="2"><span class="kw">plot</span>(KM_None_Recur, <span class="dt">conf.type =</span> <span class="st">&quot;plain&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>), <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a>
 <a class="sourceLine" id="cb72-3" title="3"><span class="kw">legend</span>(<span class="dv">6000</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>),</a>
 <a class="sourceLine" id="cb72-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb72-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Nodes_level&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p><code>grade</code> vs. <code>drecurtime</code></p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1">KM_None_drecur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(drecurtime, death) <span class="op">~</span><span class="st"> </span>grade, <span class="dt">data =</span> rotterdam_recur)</a>
 <a class="sourceLine" id="cb73-2" title="2"><span class="kw">plot</span>(KM_None_drecur, <span class="dt">conf.type =</span> <span class="st">&quot;plain&quot;</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>), <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a>
 <a class="sourceLine" id="cb73-3" title="3"><span class="kw">legend</span>(<span class="dv">4500</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;2&quot;</span>, <span class="st">&quot;3&quot;</span>),</a>
 <a class="sourceLine" id="cb73-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb73-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Nodes_level&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>Similarly, we find that patients with grade 2 breast cancer show clear distinction in both the survival of death and recurrence. However, such distinct becomes less obvious for the survival of death after recurrence has occurred.</p>
 </div>
 <div id="treatment-vs.-survival-times-1" class="section level3">
@@ -363,14 +362,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb74-3" title="3"><span class="kw">legend</span>(<span class="dv">1</span>, <span class="fl">0.4</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Both&quot;</span>, <span class="st">&quot;Chemo&quot;</span>,<span class="st">&quot;Hormon&quot;</span>, <span class="st">&quot;NaN/Other Treatment&quot;</span>),</a>
 <a class="sourceLine" id="cb74-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb74-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Treatment Group&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 <p><code>Treatment</code> vs. <code>rtime</code></p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1">KM_Treatment_Recur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span>Treatment, <span class="dt">data =</span> rotterdam)</a>
 <a class="sourceLine" id="cb75-2" title="2"><span class="kw">plot</span>(KM_Treatment_Recur, <span class="dt">conf.int =</span> <span class="ot">FALSE</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">xlab=</span><span class="st">&quot;Days&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Survival&quot;</span>)</a>
 <a class="sourceLine" id="cb75-3" title="3"><span class="kw">legend</span>(<span class="dv">1</span>, <span class="fl">0.4</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Both&quot;</span>, <span class="st">&quot;Chemo&quot;</span>,<span class="st">&quot;Hormon&quot;</span>, <span class="st">&quot;NaN/Other Treatment&quot;</span>),</a>
 <a class="sourceLine" id="cb75-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb75-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Treatment Group&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 <p>As we have discussed in Chapter 2, we know that generally chemotherapy is used on patients with age lower than 50 years old and hormontherapy is used on patients with age higher than 50 years old. Based on the difference of treatment, we could see that chemotherapy has a better effect than hormontherapy with respect to death time and a smaller yet still better effect regarding the recurrence time.</p>
 <p><code>Treatment</code> vs. <code>drecurtime</code></p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1">KM_Treatment_drecur &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(drecurtime, death) <span class="op">~</span><span class="st"> </span>Treatment, <span class="dt">data =</span> rotterdam_recur)</a>
@@ -378,7 +377,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb76-3" title="3"><span class="kw">legend</span>(<span class="dv">3700</span>, <span class="dv">1</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Both&quot;</span>, <span class="st">&quot;Chemo&quot;</span>,<span class="st">&quot;Hormon&quot;</span>, <span class="st">&quot;NaN/Other Treatment&quot;</span>),</a>
 <a class="sourceLine" id="cb76-4" title="4">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;orange&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span>, <span class="dt">cex=</span><span class="fl">0.8</span>,</a>
 <a class="sourceLine" id="cb76-5" title="5">       <span class="dt">title=</span><span class="st">&quot;Treatment Group&quot;</span>, <span class="dt">text.font=</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 <p>However, sadly enough, from the above plot we could see that no matter what treatment a patient use, it does not make a difference for the death survival time after cancer cells have recurred. This matches our conclusion from the visualization in Chapter 2.</p>
 </div>
 </div>
@@ -565,7 +564,7 @@ S(t) &amp;= e^{-\lambda t} \\
 <a class="sourceLine" id="cb88-9" title="9">                                       <span class="fl">1.06897</span>))</a>
 <a class="sourceLine" id="cb88-10" title="10"><span class="co"># Make appropriate graph using CoxSnell function</span></a>
 <a class="sourceLine" id="cb88-11" title="11"><span class="kw">CoxSnell</span>(CS_LnormD, rotterdam<span class="op">$</span>death)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1">Rlnorm &lt;-<span class="st"> </span><span class="kw">survreg</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span>Treatment <span class="op">+</span><span class="st"> </span>size <span class="op">+</span><span class="st"> </span>nodes <span class="op">+</span><span class="st"> </span>grade <span class="op">+</span><span class="st"> </span>age, <span class="dt">dist=</span><span class="st">&#39;lognormal&#39;</span>, <span class="dt">data=</span>rotterdam)</a>
 <a class="sourceLine" id="cb89-2" title="2"><span class="kw">summary</span>(Rlnorm)</a></code></pre></div>
 <pre><code>## 
@@ -603,7 +602,7 @@ S(t) &amp;= e^{-\lambda t} \\
 <a class="sourceLine" id="cb91-10" title="10"></a>
 <a class="sourceLine" id="cb91-11" title="11"><span class="co"># Make appropriate graph using CoxSnell function</span></a>
 <a class="sourceLine" id="cb91-12" title="12"><span class="kw">CoxSnell</span>(CS_LnormR, rotterdam<span class="op">$</span>recur)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <p>We could see that the Log-normal parametric model is an adequate model for both the <code>dtime</code> and <code>rtime</code> vs. <code>Treatment</code> + <code>size</code> + <code>nodes</code> + <code>grade</code> + <code>age</code>.</p>
 <div id="interpretation-of-the-coefficients" class="section level4">
 <h4><span class="header-section-number">3.4.3.1</span> Interpretation of the coefficients</h4>
@@ -675,7 +674,7 @@ is referred to as a time ratio (TR), and thus each <span class="math inline">\(c
 <a class="sourceLine" id="cb124-5" title="5"></a>
 <a class="sourceLine" id="cb124-6" title="6"><span class="kw">ggplot</span>(rotterdam_new, <span class="kw">aes</span>(<span class="dt">x=</span>age, <span class="dt">color=</span>state, <span class="dt">fill=</span>state)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb124-7" title="7"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span><span class="fl">0.3</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <p>The plot above also helps verifying the idea. We can find that the group who has been dead during the study but has never had breast cancer recurred (the green one) tends to be older than others.</p>
 <p>The positive coefficient of <code>age</code> in the log-normal model may seem indicating a protective effect of being old against having breast cancer recurred, but this should not be the true case. It is very likely that this is caused by the competing risk between being dead and having breast cancer recurred for people in different age group. The elderly patients are less likely to suffer from recurrent breast cancer because they are more likely to die from breast cancer or other complications during the treatment after the first diagnosis.</p>
 </div>
@@ -780,7 +779,7 @@ of a covariate, the hazard ratio (HR) is constant over time.</p>
         </div>
       </div>
 <a href="data-exploration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="random-survival-forest.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -803,6 +802,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -822,7 +822,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Rotterdam.pdf"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

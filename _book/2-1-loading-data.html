@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="2.1 Loading Data | Rotterdam" />
+<meta property="og:title" content="2.1 Loading Data | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
 <meta property="og:type" content="book" />
 
 
@@ -14,7 +14,7 @@
 
 <meta name="author" content="JACK TAN, YIMING MIAO" />
 
-<meta name="date" content="2021-03-14" />
+<meta name="date" content="2021-04-26" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 
-<meta name="description" content="2.1 Loading Data | Rotterdam">
+<meta name="description" content="2.1 Loading Data | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset">
 
-<title>2.1 Loading Data | Rotterdam</title>
+<title>2.1 Loading Data | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,6 +116,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+
 <link rel="stylesheet" href="toc.css" type="text/css" />
 
 <style type = "text/css">
@@ -131,6 +132,12 @@ code {
 img {
   max-width:100%;
   height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -181,13 +188,9 @@ img {
 </ul></li>
 <li><a href="3-6-summary.html#summary"><span class="toc-section-number">3.6</span> Summary</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-random-survival-forest.html#random-survival-forest"><span class="toc-section-number">4</span> Random Survival Forest</a><ul>
-<li><a href="4-1-dtime.html#dtime"><span class="toc-section-number">4.1</span> <code>dtime</code></a></li>
-<li><a href="4-2-rtime.html#rtime"><span class="toc-section-number">4.2</span> <code>rtime</code></a></li>
-</ul></li>
-<li class="has-sub"><a href="5-conclusion.html#conclusion"><span class="toc-section-number">5</span> Conclusion</a><ul>
-<li><a href="5-1-limitation.html#limitation"><span class="toc-section-number">5.1</span> Limitation</a></li>
-<li><a href="5-2-reference.html#reference"><span class="toc-section-number">5.2</span> Reference</a></li>
+<li class="has-sub"><a href="4-conclusion.html#conclusion"><span class="toc-section-number">4</span> Conclusion</a><ul>
+<li><a href="4-1-limitation.html#limitation"><span class="toc-section-number">4.1</span> Limitation</a></li>
+<li><a href="4-2-reference.html#reference"><span class="toc-section-number">4.2</span> Reference</a></li>
 </ul></li>
 </ul>
 </div>
@@ -197,7 +200,7 @@ img {
 <div class="col-sm-12">
 <div id="loading-data" class="section level2">
 <h2><span class="header-section-number">2.1</span> Loading Data</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">data</span>(rotterdam)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">data</span>(cancer, <span class="dt">package=</span><span class="st">&quot;survival&quot;</span>)</a></code></pre></div>
 <p>The data that we are going to use is called <code>rotterdam</code>, and it is a dataset that’s pre-recorded in the survival package. According to the documentation of the package, the data are retrieved from the Rotterdam tumor bank, which include various anonymous information of 2982 breast cancer patients. Below is a table of the variables in the dataset:</p>
 <table>
 <thead>

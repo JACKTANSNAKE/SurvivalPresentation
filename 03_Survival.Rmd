@@ -10,7 +10,7 @@ library(caret)
 ## Notation
 
 ```{r, echo=FALSE,warning=FALSE,message=FALSE,include=FALSE}
-data(rotterdam)
+data(cancer, package="survival")
 ```
 
 ```{r, echo=FALSE,warning=FALSE,message=FALSE,include=FALSE}

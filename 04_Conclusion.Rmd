@@ -12,8 +12,6 @@ Of course, there are many limitations within our research and much more that we 
 
 - In Chapter 3, we found out that in parametric models for recurrence vs. predictors, the coefficient for age is positive, which suggests that the older one patient is, the less likely he/she have recurred cancer. This counter-intuitive fact was explained by introducing the concept of competing risks. However, in the data that we obtained, there is no record of each patients' cause of death, and thus we could not conduct further analysis on what would be possible competing event that makes this relationship exist. In future study, if possible, researcher should try to record for patients with exact time of death their cause of death. In this manner, we might be able to study the causes of death for patients with breast cancer but did not die from the cancer itself.
 
-- In Chapter 4, we digged a little bit into machine learning related topic using survival data. However, the result was not very satisfactory and we could not find a proper way to make predictions parametrically. For future studys, exploring the possibility of predicting survival using censored data might be of interest.
-
 ## Reference
 
 * “Breast Cancer - Stages.” Cancer.Net, 14 Aug. 2020, https://www.cancer.net/cancer-types/breast-cancer/stages.

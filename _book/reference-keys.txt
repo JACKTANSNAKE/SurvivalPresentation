@@ -38,9 +38,6 @@ cox-ph-model
 cox-ph-model-for-dtime
 cox-ph-model-for-rtime
 summary
-random-survival-forest
-dtime
-rtime
 conclusion
 limitation
 reference

@@ -1,5 +1,5 @@
 ---
-title: "Rotterdam"
+title: "Factors that Affect Breast Cancer Survival -- A Survival Analysis with Rotterdam Dataset"
 author: "JACK TAN, YIMING MIAO"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

@@ -3,11 +3,12 @@
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'survival', 'survminer', 'ggplot2', 'caret','LTRCtrees'
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'survival', 'survminer', 'ggplot2'
 ), 'packages.bib')
 ```
 
 ```{r, echo=FALSE,warning=FALSE,message=FALSE,include=FALSE}
+library(bookdown)
 library(survival)
 library(survminer)
 library(tidyverse)
@@ -16,7 +17,7 @@ library(caret)
 
 ## Loading Data
 ```{r}
-data(rotterdam)
+data(cancer, package="survival")
 ```
 
 The data that we are going to use is called `rotterdam`, and it is a dataset that's pre-recorded in the survival package. According to the documentation of the package, the data are retrieved from the Rotterdam tumor bank, which include various anonymous information of 2982 breast cancer patients. Below is a table of the variables in the dataset:

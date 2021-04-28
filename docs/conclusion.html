@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter5 Conclusion | Rotterdam</title>
-  <meta name="description" content="Chapter5 Conclusion | Rotterdam" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>Chapter4 Conclusion | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</title>
+  <meta name="description" content="Chapter4 Conclusion | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter5 Conclusion | Rotterdam" />
+  <meta property="og:title" content="Chapter4 Conclusion | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter5 Conclusion | Rotterdam" />
+  <meta name="twitter:title" content="Chapter4 Conclusion | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
   
   
   
@@ -24,14 +24,14 @@
 <meta name="author" content="JACK TAN, YIMING MIAO" />
 
 
-<meta name="date" content="2021-03-14" />
+<meta name="date" content="2021-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="random-survival-forest.html"/>
+<link rel="prev" href="survival-analysis.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -115,6 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -164,13 +167,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="survival-analysis.html"><a href="survival-analysis.html#summary"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="random-survival-forest.html"><a href="random-survival-forest.html"><i class="fa fa-check"></i><b>4</b> Random Survival Forest</a><ul>
-<li class="chapter" data-level="4.1" data-path="random-survival-forest.html"><a href="random-survival-forest.html#dtime"><i class="fa fa-check"></i><b>4.1</b> <code>dtime</code></a></li>
-<li class="chapter" data-level="4.2" data-path="random-survival-forest.html"><a href="random-survival-forest.html#rtime"><i class="fa fa-check"></i><b>4.2</b> <code>rtime</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>5</b> Conclusion</a><ul>
-<li class="chapter" data-level="5.1" data-path="conclusion.html"><a href="conclusion.html#limitation"><i class="fa fa-check"></i><b>5.1</b> Limitation</a></li>
-<li class="chapter" data-level="5.2" data-path="conclusion.html"><a href="conclusion.html#reference"><i class="fa fa-check"></i><b>5.2</b> Reference</a></li>
+<li class="chapter" data-level="4" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>4</b> Conclusion</a><ul>
+<li class="chapter" data-level="4.1" data-path="conclusion.html"><a href="conclusion.html#limitation"><i class="fa fa-check"></i><b>4.1</b> Limitation</a></li>
+<li class="chapter" data-level="4.2" data-path="conclusion.html"><a href="conclusion.html#reference"><i class="fa fa-check"></i><b>4.2</b> Reference</a></li>
 </ul></li>
 </ul>
 
@@ -181,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Rotterdam</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</a>
           </h1>
         </div>
 
@@ -190,20 +189,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="conclusion" class="section level1">
-<h1><span class="header-section-number">Chapter5</span> Conclusion</h1>
+<h1><span class="header-section-number">Chapter4</span> Conclusion</h1>
 <p>From our research, we have seen and proven that though treatment(in our dataset) might appear to have different effect on patients, by including confounder and other factors, we do not have enough evidence that the difference is solid. For the TNM diagnostics of breast cancer, we have seen that the general trend is: the larger the size of the tumor, the larger the number of lymph nodes tested positive, and the more abnormal looking cancer cell(higher cancer grade), the shorter a patient’s survival might be, for both survival of death and recurrence. We have also seen that the most formidable aspect of breast cancer(or maybe all cancer) is the recurrence, as in our research there’s not much time left if a patients tumor have recurred. But generally, breast cancer has a relative long survival and patients diagnosed with breast cancer should not be pessimistic but rather face reality and seek proper treatment. In this way, one might achieve as long survival as possible.</p>
 <p>Of course, there are many limitations within our research and much more that we could explore in the realm of breast cancer. We will list a few for future study below.</p>
 <div id="limitation" class="section level2">
-<h2><span class="header-section-number">5.1</span> Limitation</h2>
+<h2><span class="header-section-number">4.1</span> Limitation</h2>
 <ul>
 <li><p>As we have mentioned in Motivation, the TNM system for diagnosis of breast cancer relies on three important indicators, <strong>Tumor</strong>, <strong>Node</strong>, <strong>Metastasis</strong>. Now in our research, the dataset already contains information about tumor size, number of lymph nodes tested positive and somewhat incomplete metastasis, as we do not have information on patients with grade I cancer. This might lead to an overall pessimistic conclusion about survival times of breast cancer patients. For future studies, we think that it would be important to include grade I breast cancer incidence, as it is crucial to a more accurate estimate of patients’ survival time.</p></li>
 <li><p>In Chapter 2, we compared the effect and the condition for choosing between chemotherapy and hormontherapy. We have had good results discerning the patients taking different therapy by age, as younger patients tend to take chemotherapy more and older patients tend to take hormontherapy more. And we have also seen that most patients with no lymph nodes tested positive choose neither of chemotherapy and hormontherapy. There might be other therapies that better suit mild condition patients. Additionally, nowadays, there are way more categories of therapies for breast cancer and many of them may have better effect on patients and less discerning characteristics like age with chemotherapy and hormontherapy. In future studies, these missing treatment shall be recorded, as it is critical to studying if the new methods are more effective and lasting treatment for breast cancer patients.</p></li>
 <li><p>In Chapter 3, we found out that in parametric models for recurrence vs. predictors, the coefficient for age is positive, which suggests that the older one patient is, the less likely he/she have recurred cancer. This counter-intuitive fact was explained by introducing the concept of competing risks. However, in the data that we obtained, there is no record of each patients’ cause of death, and thus we could not conduct further analysis on what would be possible competing event that makes this relationship exist. In future study, if possible, researcher should try to record for patients with exact time of death their cause of death. In this manner, we might be able to study the causes of death for patients with breast cancer but did not die from the cancer itself.</p></li>
-<li><p>In Chapter 4, we digged a little bit into machine learning related topic using survival data. However, the result was not very satisfactory and we could not find a proper way to make predictions parametrically. For future studys, exploring the possibility of predicting survival using censored data might be of interest.</p></li>
 </ul>
 </div>
 <div id="reference" class="section level2">
-<h2><span class="header-section-number">5.2</span> Reference</h2>
+<h2><span class="header-section-number">4.2</span> Reference</h2>
 <ul>
 <li><p>“Breast Cancer - Stages.” Cancer.Net, 14 Aug. 2020, <a href="https://www.cancer.net/cancer-types/breast-cancer/stages" class="uri">https://www.cancer.net/cancer-types/breast-cancer/stages</a>.</p></li>
 <li><p>“Breast Cancer Grades” American Cancer Society, 20 Sep. 2019, <a href="https://www.cancer.org/cancer/breast-cancer/understanding-a-breast-cancer-diagnosis/breast-cancer-grades.html" class="uri">https://www.cancer.org/cancer/breast-cancer/understanding-a-breast-cancer-diagnosis/breast-cancer-grades.html</a>.</p></li>
@@ -220,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="random-survival-forest.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="survival-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -244,6 +242,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -263,7 +262,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Rotterdam.pdf"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

@@ -13,4 +13,4 @@ RnwWeave: Sweave
 LaTeX: XeLaTeX
 
 BuildType: Website
-WebsitePath: ~/2020research/STAT453FinalProject
+WebsitePath: ~/GitHub/SurvivalPresentation

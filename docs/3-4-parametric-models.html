@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="3.4 Parametric Models | Rotterdam" />
+<meta property="og:title" content="3.4 Parametric Models | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset" />
 <meta property="og:type" content="book" />
 
 
@@ -14,7 +14,7 @@
 
 <meta name="author" content="JACK TAN, YIMING MIAO" />
 
-<meta name="date" content="2021-03-14" />
+<meta name="date" content="2021-04-26" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -23,9 +23,9 @@ MathJax.Hub.Config({
 </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 
-<meta name="description" content="3.4 Parametric Models | Rotterdam">
+<meta name="description" content="3.4 Parametric Models | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset">
 
-<title>3.4 Parametric Models | Rotterdam</title>
+<title>3.4 Parametric Models | Factors that Affect Breast Cancer Survival – A Survival Analysis with Rotterdam Dataset</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,6 +116,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+
 <link rel="stylesheet" href="toc.css" type="text/css" />
 
 <style type = "text/css">
@@ -131,6 +132,12 @@ code {
 img {
   max-width:100%;
   height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -181,13 +188,9 @@ img {
 </ul></li>
 <li><a href="3-6-summary.html#summary"><span class="toc-section-number">3.6</span> Summary</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-random-survival-forest.html#random-survival-forest"><span class="toc-section-number">4</span> Random Survival Forest</a><ul>
-<li><a href="4-1-dtime.html#dtime"><span class="toc-section-number">4.1</span> <code>dtime</code></a></li>
-<li><a href="4-2-rtime.html#rtime"><span class="toc-section-number">4.2</span> <code>rtime</code></a></li>
-</ul></li>
-<li class="has-sub"><a href="5-conclusion.html#conclusion"><span class="toc-section-number">5</span> Conclusion</a><ul>
-<li><a href="5-1-limitation.html#limitation"><span class="toc-section-number">5.1</span> Limitation</a></li>
-<li><a href="5-2-reference.html#reference"><span class="toc-section-number">5.2</span> Reference</a></li>
+<li class="has-sub"><a href="4-conclusion.html#conclusion"><span class="toc-section-number">4</span> Conclusion</a><ul>
+<li><a href="4-1-limitation.html#limitation"><span class="toc-section-number">4.1</span> Limitation</a></li>
+<li><a href="4-2-reference.html#reference"><span class="toc-section-number">4.2</span> Reference</a></li>
 </ul></li>
 </ul>
 </div>
@@ -378,7 +381,7 @@ S(t) &amp;= e^{-\lambda t} \\
 <a class="sourceLine" id="cb88-9" title="9">                                       <span class="fl">1.06897</span>))</a>
 <a class="sourceLine" id="cb88-10" title="10"><span class="co"># Make appropriate graph using CoxSnell function</span></a>
 <a class="sourceLine" id="cb88-11" title="11"><span class="kw">CoxSnell</span>(CS_LnormD, rotterdam<span class="op">$</span>death)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1">Rlnorm &lt;-<span class="st"> </span><span class="kw">survreg</span>(<span class="kw">Surv</span>(rtime, recur) <span class="op">~</span><span class="st"> </span>Treatment <span class="op">+</span><span class="st"> </span>size <span class="op">+</span><span class="st"> </span>nodes <span class="op">+</span><span class="st"> </span>grade <span class="op">+</span><span class="st"> </span>age, <span class="dt">dist=</span><span class="st">&#39;lognormal&#39;</span>, <span class="dt">data=</span>rotterdam)</a>
 <a class="sourceLine" id="cb89-2" title="2"><span class="kw">summary</span>(Rlnorm)</a></code></pre></div>
 <pre><code>## 
@@ -416,7 +419,7 @@ S(t) &amp;= e^{-\lambda t} \\
 <a class="sourceLine" id="cb91-10" title="10"></a>
 <a class="sourceLine" id="cb91-11" title="11"><span class="co"># Make appropriate graph using CoxSnell function</span></a>
 <a class="sourceLine" id="cb91-12" title="12"><span class="kw">CoxSnell</span>(CS_LnormR, rotterdam<span class="op">$</span>recur)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <p>We could see that the Log-normal parametric model is an adequate model for both the <code>dtime</code> and <code>rtime</code> vs. <code>Treatment</code> + <code>size</code> + <code>nodes</code> + <code>grade</code> + <code>age</code>.</p>
 <div id="interpretation-of-the-coefficients" class="section level4">
 <h4><span class="header-section-number">3.4.3.1</span> Interpretation of the coefficients</h4>
@@ -488,7 +491,7 @@ is referred to as a time ratio (TR), and thus each <span class="math inline">\(c
 <a class="sourceLine" id="cb124-5" title="5"></a>
 <a class="sourceLine" id="cb124-6" title="6"><span class="kw">ggplot</span>(rotterdam_new, <span class="kw">aes</span>(<span class="dt">x=</span>age, <span class="dt">color=</span>state, <span class="dt">fill=</span>state)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb124-7" title="7"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span><span class="fl">0.3</span>)</a></code></pre></div>
-<p><img src="Rotterdam_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="Factors-that-Affect-Breast-Cancer-Survival----A-Survival-Analysis-with-Rotterdam-Dataset_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <p>The plot above also helps verifying the idea. We can find that the group who has been dead during the study but has never had breast cancer recurred (the green one) tends to be older than others.</p>
 <p>The positive coefficient of <code>age</code> in the log-normal model may seem indicating a protective effect of being old against having breast cancer recurred, but this should not be the true case. It is very likely that this is caused by the competing risk between being dead and having breast cancer recurred for people in different age group. The elderly patients are less likely to suffer from recurrent breast cancer because they are more likely to die from breast cancer or other complications during the treatment after the first diagnosis.</p>
 </div>
