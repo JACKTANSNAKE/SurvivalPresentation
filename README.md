@@ -1,1 +1,1 @@
-Link to github Page: https://jacktansnake.github.io/STAT453FinalProject/
+Link to github Page: https://jacktansnake.github.io/SurvivalPresentation/
